@@ -1,0 +1,20 @@
+# Node modules
+/node_modules/
+
+# Build directories
+/dist/
+/build/
+
+# Logs
+*.log
+
+# .env file (berisi variabel lingkungan)
+.env
+
+# IDEs and editors
+.vscode/
+.idea/
+.DS_Store
+
+# Temporary files
+*.tmp
