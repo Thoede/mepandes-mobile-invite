@@ -1,21 +1,13 @@
-Mepandes Mobile Website
-Hi, Welcome to my Mepandes Invitation Mobile Website! This website is used to invite people to come to your event. Feel free to use (Mobile Resolution only 320-768)
+🚀 Cara Pake Gimana?
 
-Feature
-Welcome Message
-Member Photo
-Location Detail
-Countdown
-RSVP
-How to Clone
-Use terminal/cmd
+Clone repo ini pake git clone <url-repo>
+Customize sesuai dengan kebutuhan undangan (ganti teks, foto, dll).
+Deploy ke platform hosting (Vercel atau Netlify).
 
-git clone <RESPOSITORY_URL>
+⚙️ Pake ini bosq :
+HTML, CSS, JavaScript 🌐 
+Vercel 🌐
+SupaBase 🌐
 
-npm install / yarn install
-
-npm start / yarn start
-
-access with http://localhost:3000 
-
-reach me [tude18022008@gmail.com]
+📩 Kontak
+[tude18022008@gmail.com] 💬
