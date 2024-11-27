@@ -1,0 +1,308 @@
+/* Background */
+body {
+    background-image: url('aset/background.jpg'), linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6));
+    font-family: 'Open Sans', sans-serif;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: #f0f0f0;
+    display:none;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px); /* Efek vertikal */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* General Styles for Fade-in Elements */
+.fade-in {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease, transform 1s ease;
+    transition-delay: 0.3s; /* Delay animasi */
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Header, Details, Footer, and Countdown */
+.header, .details, .footer, .photo, .countdown, .rsvp {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease, transform 1s ease;
+    transition-delay: 0.3s;
+}
+
+/* Elements  Visible */
+.header.visible, .details.visible, .footer.visible, .photo.visible, .countdown.visible, .rsvp.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Header  */
+h1 {
+    font-family: 'Playfair Display', serif;
+    color: #DAA520;
+    font-size: 3rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Subtitle */
+.subtitle {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.2rem;
+    color: white;
+    margin-top: 1rem;
+    text-shadow: 1px 1px 3px rgb(0, 0, 0);
+}
+
+/* Photo  */
+.photo {
+    background-image: url('aset/ornamentother2.png');
+    background-position: flex;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    padding: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.photo img {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    border: 8px solid rgba(218, 165, 32, 0.8);
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
+}
+
+.photo img:hover {
+    transform: scale(1.05);
+}
+
+/* Detail */
+.details {
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 15px;
+    padding: 30px;
+    margin-top: 40px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+    text-align: center;
+}
+
+.details:hover {
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+}
+
+.details h2 {
+    font-family: 'Playfair Display', serif;
+    color: rgba(218, 165, 32, 0.8);
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.details p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.1rem;
+    color: #333;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.details ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.details ul li {
+    font-size: 1.1rem;
+    color: #666;
+    padding-left: 20px;
+    position: relative;
+}
+
+.details ul li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #DAA520;
+    font-size: 1.5rem;
+}
+
+/* Button Styling */
+.btn, .rsvp button {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #DAA520;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.btn:hover, .rsvp button:hover {
+    background-color: #b8860b;
+    box-shadow: 0px 0px 12px rgba(218, 165, 32, 0.8);
+}
+
+/* RSVP Section */
+.rsvp {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 15px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.rsvp h2 {
+    font-size: 1.5rem;
+    color: #ffffff;
+}
+
+.rsvp input, .rsvp button {
+    margin: 10px 0;
+    padding: 10px;
+    width: 80%;
+    border-radius: 10px;
+    border: 2px solid #DAA520;
+    font-size: 1rem;
+}
+
+.error-message {
+    color: red;
+    font-size: 1.1rem;
+    margin-top: 15px;
+}
+
+/* Countdown Section */
+.countdown {
+    background-image: url('aset/ornamentother2.png');
+    background-position: center;
+    background-size: 50%;
+    background-repeat: no-repeat;
+    padding: 100px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap;
+}
+
+.countdown .time-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    padding: 20px;
+    background-color: #DAA520;
+    border-radius: 10px;
+    width: 80px;
+    height: 120px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.countdown .time-box:hover {
+    transform: translateY(-5px);
+}
+
+.countdown .time {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.countdown .label {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    color: #666666;
+}
+
+/* Responsif banget tcyuy */
+@media only screen and (max-width: 768px) {
+    .countdown {
+        grid-template-columns: repeat(2, 1fr); /* 2 kolom */
+    }
+
+    .countdown .time-box {
+        width: 70px;
+        height: 100px;
+    }
+
+    .countdown .time {
+        font-size: 2.5rem;
+    }
+
+    .rsvp button {
+        font-size: 1.1rem;
+        padding: 12px 25px;
+    }
+
+    .rsvp input {
+        font-size: 1rem;
+    }
+
+    .lokasimap {
+        width: 100%;
+        max-width: 600px;
+        height: auto;
+        display: block;
+        margin: 20px 0;
+        border-radius: 10px;
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .lokasimap {
+        max-width: 100%;
+    }
+}
+
+/* Footer */
+.footer {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    padding: 30px 20px;
+    text-align: center;
+    font-size: 1.1rem;
+    position: relative;
+    margin-top: 40px;
+    border-radius: 15px;
+}
+
+.footer a {
+    color: #DAA520;
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    body {
+        display: block;
+    }
+}
