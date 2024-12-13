@@ -57,8 +57,8 @@ window.onload = function() {
 // DATABASEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
 const { createClient } = require('@supabase/supabase-js');
 
-const supabaseUrl = 'https://xkxhvtsuzvzesahlcatj.supabase.co';
-const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhreGh2dHN1enZ6ZXNhaGxjYXRqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzI3MTQyNzIsImV4cCI6MjA0ODI5MDI3Mn0.2a5MKv-bftKZ7Az6lBRx69Ly2r_6XVRKex_gajz_qYs';
+const supabaseUrl = '';
+const supabaseKey = '';
 const supabase = createClient(supabaseUrl, supabaseKey);
 //SUPABASEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
 
