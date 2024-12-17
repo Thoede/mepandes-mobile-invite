@@ -53,14 +53,19 @@ window.onload = function() {
     }
 };
 
+const playButton = document.getElementById('open-invitation');
+const audio = document.getElementById('background-audio');
 
-// DATABASEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
-const { createClient } = require('@supabase/supabase-js');
 
-const supabaseUrl = '';
-const supabaseKey = '';
-const supabase = createClient(supabaseUrl, supabaseKey);
-//SUPABASEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+playButton.addEventListener('click', () => {
+  audio.play(); 
+});
+
+
+document.getElementById("open-invitation").addEventListener("click", function () {
+  document.getElementById("overlay").style.display = "none";
+});
+
 
 async function submitRSVP(name, attendees, email) {
   const { data, error } = await supabase
@@ -85,3 +90,4 @@ document.getElementById('rsvp-form').addEventListener('submit', (event) => {
 
   submitRSVP(name, attendees, email);
 });
+
