@@ -7,8 +7,54 @@ body {
     background-attachment: fixed;
     background-color: #f0f0f0;
     display:none;
+    
 }
 
+/* Overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+  
+  .overlay-content {
+    text-align: center;
+    color: white;
+  }
+  
+  .overlay h1 {
+    font-family: 'Playfair Display', serif;
+    color: #DAA520;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+
+  .overlay h5 {
+    font-family: 'Playfair Display', serif;
+    color: #DAA520;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+
+  #open-invitation {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+  }
+
+  audio {
+    display: none; 
+  }
+  
+  
+  
+  
 /* Fade-in Animation */
 @keyframes fadeIn {
     from {
@@ -90,7 +136,44 @@ h1 {
 .photo img:hover {
     transform: scale(1.05);
 }
+.name-list {
+    text-align: center;
+    background-color: #333;
+    color: #f1c40f;
+    padding: 25px;
+    border-radius: 10%;
+}
 
+.name-list h2 {
+    margin: 20px 0;
+    font-size: 36px; 
+    font-family: 'Playfair Display', serif;
+    font-weight: 700; 
+    color: white;
+    letter-spacing: 5px; 
+    text-transform: uppercase; 
+    line-height: 1.5; }
+
+
+.name-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.name-list  {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.line {
+    border: none;
+    height: 1px;
+    background-color: #f1c40f;
+    margin: 10px 0;
+    width: 100%;
+}
+
+  
 /* Detail */
 .details {
     background-color: rgba(255, 255, 255, 0.6);
