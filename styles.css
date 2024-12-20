@@ -12,14 +12,13 @@
 }
 
 body, html {
-    font-family: 'Abril Fatface', cursive;
+    font-family: 'Abril Fatface', cursive, sans-serif; 
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow-x: hidden;
+    overflow-x: visible;
     margin: 0;
-    overflow-x: hidden;
 }
 
 .background {
@@ -404,7 +403,6 @@ button:hover {
 
 .countdown {
     font-family: "Parisienne", serif;
-    background-image: url('aset/ornamentother2.png');
     background-position: center;
     background-size: 50%;
     background-repeat: no-repeat;
@@ -473,4 +471,14 @@ button:hover {
     display: block; /* Ensure image is displayed as a block */
     margin-left: auto;
     margin-right: auto; /* Center the image horizontally */
+}
+
+@media (max-width: 768px) {
+    .content h3 {
+        font-size: 1.5rem; /* Adjust size for mobile */
+    }
+
+    .content h2 {
+        font-size: 1.2rem; /* Adjust size for mobile */
+    }
 }
