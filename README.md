@@ -8,16 +8,3 @@ Hi, Welcome to my Mepandes Invitation Mobile Website! This website is used to in
 - Location Detail
 - Countdown 
 
-### How to Clone
-
-Use terminal/cmd
-
-```bash
-git clone <RESPOSITORY_URL>
-
-npm install / yarn install
-
-npm start / yarn start
-
-access with http://localhost:3000 
-
