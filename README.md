@@ -7,7 +7,6 @@ Hi, Welcome to my Mepandes Invitation Mobile Website! This website is used to in
 - Member Photo
 - Location Detail
 - Countdown 
-- RSVP
 
 ### How to Clone
 
@@ -22,4 +21,3 @@ npm start / yarn start
 
 access with http://localhost:3000 
 
-reach me [tude18022008@gmail.com]
