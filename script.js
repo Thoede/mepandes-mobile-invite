@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-  let countdownDate = new Date("Dec 24, 2024 10:00:00").getTime();
+  let countdownDate = new Date("Dec 24, 2024 17:00:00").getTime();
   
   let interval = setInterval(function() {
       let now = new Date().getTime();
