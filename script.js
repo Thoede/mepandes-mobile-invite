@@ -36,3 +36,4 @@ document.addEventListener("DOMContentLoaded", function() {
       document.querySelector(".content2").classList.add("show");
   });
 });
+
