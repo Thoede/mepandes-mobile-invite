@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+	<link rel="icon" href="favicon.png" type="image/png">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Cormorant+Upright:wght@300;400;500;600;700&family=El+Messiri:wght@400..700&family=Parisienne&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
@@ -11,6 +13,11 @@
     <title>Undangan Mepandes</title>
 </head>
 <body>
+	<div id="loading-screen">
+        <div class="spinner"></div>
+        <p>Loading...</p>
+    </div>
+
     <div class="background">
         <div class="slideshow">
             <img src="assets/formal1.png" class="active" alt="Background 1">
@@ -26,13 +33,13 @@
         </div>
 
         <div class="bottom-content">
-            <p>Kepada Yth: Bpk/Ibu/Saudara/I</p>
-            <p>Tamu Undangan</p>
-            <a href="#" class="button" id="scrollButton">
-                <img src="assets/open.png" alt="icon" class="button-icon">
-            </a>
-        </div>
-    </div>
+			<p>Kepada Yth: Bpk/Ibu/Saudara/I</p>
+			<p>Tamu Undangan</p>
+			<a href="#" class="button" id="scrollButton">
+				<img src="assets/open.png" alt="icon" class="button-icon">
+			</a>
+		</div>
+		
 
     <div class="content2">
         <div class="overlay-content">
@@ -41,7 +48,7 @@
                 <img src="assets/oms.png" alt="Welcome to the Event!" />
             </div>            
             <p class="opening">
-                Atas asung kerta wara nugraha Ida Sang Hyang Widhi Wasa.<br>
+                Atas asung kerta wara nugraha<br> Ida Sang Hyang Widhi Wasa.<br>
                 Kami sekeluarga bermaksud menyelenggarakan<br>
                 Acara Mepandes putra-putri kami :
             </p>
@@ -73,7 +80,7 @@
     
             <!-- Date Countdown -->
             <section class="countdown">
-                <h3>Countdown</h3>
+                <h3>Countday</h3>
                 <div class="time-box">
                     <div class="time" id="days"></div>
                     <div class="label">Hari</div>
@@ -93,7 +100,7 @@
             </section>
             
             <!-- Photo Gallery -->
-            <h3>Photo Gallery</h3>
+            <h1 class="gallerytext">Photo Gallery</h1>
             <div class="gallery">
                 <img src="assets/photo1.png" alt="Event Photo 1">
                 <img src="assets/photo2.png" alt="Event Photo 2">
@@ -103,8 +110,8 @@
     
             <!-- Closing Text -->
             <div class="closing">
-                <p>Merupakan sebuah kehormatan dan kebahagiaan bagi kami<br>
-                     apabila Bapak/Ibu/Saudara/i, <br>berkenan hadir untuk memberikan doa dan restu.
+                <p>Merupakan sebuah kehormatan<br> dan kebahagiaan bagi kami<br>
+                     apabila Bapak/Ibu/Saudara/i, <br>berkenan hadir untuk<br> memberikan doa dan restu.
                      <br> Atas kehadirannya kami ucapkan terima kasih.</p>
                 <img src="assets/omsh.png" class="image-container2">
             </div>
