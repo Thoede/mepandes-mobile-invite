@@ -19,6 +19,7 @@ body, html {
     justify-content: center;
     overflow-x: visible;
     margin: 0;
+
 }
 
 .background {
@@ -182,6 +183,7 @@ body, html {
     padding: 20px;
     box-sizing: border-box;
     overflow-y: auto; /* Allow vertical scrolling only */
+    
 }
 
 .content2 p{
