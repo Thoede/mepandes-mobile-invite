@@ -1,182 +1,317 @@
-/* Background */
-body {
-    background-image: url('aset/background.jpg'), linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6));
-    font-family: 'Open Sans', sans-serif;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    background-color: #f0f0f0;
-    display:none;
-    
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Overlay */
-.overlay {
-    position: fixed;
+@media (min-width: 768px) {
+    body {
+        background-color: white;
+        display: none;
+    }
+}
+
+body, html {
+    font-family: 'Abril Fatface', cursive;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.background {
+    position: fixed; /* Make the background fixed */
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: gray;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-  }
-  
-  .overlay-content {
+    z-index: -1; /* Make sure it's behind the content */
+}
+
+.slideshow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.slideshow img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.slideshow img.active {
+    opacity: 1;
+}
+
+.slideshow::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Optional dark overlay */
+    z-index: 1;
+}
+
+.content {
     text-align: center;
     color: white;
-  }
-  
-  .overlay h1 {
-    font-family: 'Playfair Display', serif;
-    color: #DAA520;
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-  }
+    text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.7);
+    position: relative; /* Change from flex to position relative to allow absolute positioning of .content2 */
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 80%;
+    padding: 0 20px;
+}
 
-  .overlay h5 {
-    font-family: 'Playfair Display', serif;
-    color: #DAA520;
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-  }
+.top-content {
+    margin-bottom: 10px;
+}
 
-  #open-invitation {
+.bottom-content {
+    margin-top: auto;
+}
+
+.content h3 {
+    font-size: 1.8rem;
+    font-family: 'Abril Fatface', cursive;
+    margin-bottom: 2px;
+    letter-spacing: 3px;
+    margin-top: -1.8rem;
+    color:white;
+}
+
+.content h2 {
+    font-family: "El Messiri", serif;
+    font-size: 0.9rem;
+    margin-bottom: 2px;
+    letter-spacing: 3px;
+    font-weight: 1rem;
+}
+
+.content p {
+    font-family: "Cormorant Upright", serif;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+.button {
+    padding: 5px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    font-family: 'Cormorant Upright', serif;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    height: auto;
+    position: relative;
+    margin-top: 15px;
+}
+
+.button::before,
+.button::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+}
+
+.button::before {
+    top: -2px;
+}
+
+.button::after {
+    bottom: -2px;
+}
+
+.button-icon {
+    width: 50px;
+    height: 50px;
+}
+
+.button:hover {
+    background-color: #29141c;
+    transition: background-color 0.3s ease;
+}
+
+.bottom-content p {
+    font-size: 1rem;
+    color: white;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.content2 {
+    width: 100vw; /* Full width of the viewport */
+    max-width: 100%; /* Limit to 100% of the viewport width */
+    height: 350vh;
+    background-color: #29141c;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 2px solid white;
+    border-radius: 8px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.3s ease-in-out;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto; /* Allow vertical scrolling only */
+}
+
+.content2 p{
+    font-family: "Cormorant Upright", serif;
+}
+
+.content2.show {
+    visibility: visible; /* Make the content visible when the class is added */
+    opacity: 1; /* Fade in the content */
+}
+
+.overlay-content {
+    text-align: center;
+}
+
+.image-container img {
+    width: 35%;
+    max-width: 250px; 
+    height:auto;
+    margin-top: 20px;
+}
+
+.content2 .overlay-content h2, h3, h4 {
+    font-family: "Funnel Sans", serif;
+    color:#E0A75E;
+    margin-bottom: 1rem;
+}
+
+.countdown {
+    margin-top: 20px;
+}
+
+#countdown {
+    font-size: 2rem;
+    color: #FF6347; /* Red color for the countdown */
+}
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.gallery img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom:3rem;
+}
+
+button {
     padding: 15px 30px;
     font-size: 1.2rem;
-  }
-
-  audio {
-    display: none; 
-  }
-  
-  
-  
-  
-/* Fade-in Animation */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-20px); /* Efek vertikal */
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* General Styles for Fade-in Elements */
-.fade-in {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 1s ease, transform 1s ease;
-    transition-delay: 0.3s; /* Delay animasi */
-}
-
-.fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Header, Details, Footer, and Countdown */
-.header, .details, .footer, .photo, .countdown, .rsvp {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 1s ease, transform 1s ease;
-    transition-delay: 0.3s;
-}
-
-/* Elements  Visible */
-.header.visible, .details.visible, .footer.visible, .photo.visible, .countdown.visible, .rsvp.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Header  */
-h1 {
-    font-family: 'Playfair Display', serif;
-    color: #DAA520;
-    font-size: 3rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-/* Subtitle */
-.subtitle {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 1.2rem;
+    background-color: #DAA520;
     color: white;
-    margin-top: 1rem;
-    text-shadow: 1px 1px 3px rgb(0, 0, 0);
-}
-
-/* Photo  */
-.photo {
-    background-image: url('aset/ornamentother2.png');
-    background-position: flex;
-    background-size: 100%;
-    background-repeat: no-repeat;
-    padding: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 1rem;
-}
-
-.photo img {
-    border-radius: 50%;
-    width: 200px;
-    height: 200px;
-    border: 8px solid rgba(218, 165, 32, 0.8);
-    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease-in-out;
-}
-
-.photo img:hover {
-    transform: scale(1.05);
-}
-.name-list {
-    text-align: center;
-    background-color: #333;
-    color: #f1c40f;
-    padding: 25px;
-    border-radius: 10%;
-}
-
-.name-list h2 {
-    margin: 20px 0;
-    font-size: 36px; 
-    font-family: 'Playfair Display', serif;
-    font-weight: 700; 
-    color: white;
-    letter-spacing: 5px; 
-    text-transform: uppercase; 
-    line-height: 1.5; }
-
-
-.name-list ul {
-    list-style: none;
-    padding: 0;
-}
-
-.name-list  {
-    font-size: 15px;
-    font-weight: bold;
-}
-
-.line {
     border: none;
-    height: 1px;
-    background-color: #f1c40f;
-    margin: 10px 0;
-    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
 }
 
-  
-/* Detail */
+button:hover {
+    background-color: #29141c;
+}
+
+@media (max-width: 768px) {
+    .content2 {
+        height: 100vh; /* Adjust height to fit on smaller screens */
+    }
+
+    .content2 h2, .content2 h3, .content2 h4 {
+        font-size: 1.2rem; /* Adjust font size for smaller screens */
+    }
+
+    .content2 p {
+        font-size: 1rem; /* Smaller font size for readability */
+    }
+
+    .gallery img {
+        width: 100px; /* Make gallery images smaller on small screens */
+        height: 100px;
+    }
+
+    button {
+        padding: 12px 20px; /* Make button size smaller for mobile */
+    }
+}
+
+.content2 h2, .content2 h3, .content2 h4, .content2 p {
+    max-width: 100%; /* Prevent text from extending outside the box */
+    word-wrap: break-word; /* Wrap long words that might overflow */
+}
+.name-list p {
+    font-size: 1.2rem;
+    margin: 5px 0;
+    text-align: center;
+}
+
+.name-list p.line {
+    border-bottom: 1px solid white;; /* Creates the dashed line */
+    width: 100%;
+    margin-bottom:1rem;
+    padding:auto;
+}
+
+.name-list p.name{
+    font-family: "Parisienne", serif;
+    font-weight:50px;
+    font-size:1.5rem;
+    margin-bottom: 20px;
+}
+
+.name-list h3{
+    letter-spacing: 0.1rem;
+    font-weight:-5px;
+}
+
+
+.image-formal img {
+    width: 35%; /* Adjust based on your container's size */
+    max-width: 300px; /* Adjust to a reasonable size, e.g. 300px */
+    height: auto;
+    margin-top: 20px;
+}
+
 .details {
-    background-color: rgba(255, 255, 255, 0.6);
     border-radius: 15px;
     padding: 30px;
     margin-top: 40px;
@@ -191,8 +326,8 @@ h1 {
 }
 
 .details h2 {
-    font-family: 'Playfair Display', serif;
-    color: rgba(218, 165, 32, 0.8);
+    font-family: "Funnel Sans", serif;
+    color: white;
     font-size: 2rem;
     display: flex;
     justify-content: center;
@@ -201,10 +336,9 @@ h1 {
 }
 
 .details p {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 1.1rem;
-    color: #333;
-    line-height: 1.8;
+    font-family: "Funnel Sans", serif;    font-size: 1.1rem;
+    color: white;
+    line-height: 0.3rem;
     margin-bottom: 20px;
 }
 
@@ -228,8 +362,21 @@ h1 {
     font-size: 1.5rem;
 }
 
-/* Button Styling */
-.btn, .rsvp button {
+.lokasimap {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    display: block;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.lokasimap {
+    max-width: 100%;
+}
+
+.btn {
     display: inline-block;
     padding: 12px 25px;
     background-color: #DAA520;
@@ -243,58 +390,44 @@ h1 {
     cursor: pointer;
 }
 
-.btn:hover, .rsvp button:hover {
-    background-color: #b8860b;
-    box-shadow: 0px 0px 12px rgba(218, 165, 32, 0.8);
+.btn:hover{
+    background-color:white;
+    color:#DAA520;
 }
 
-/* RSVP Section */
-.rsvp {
-    text-align: center;
-    margin-top: 40px;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.6);
-    border-radius: 15px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+.image-container2{
+    width: 50%;
+    max-width: 250px; 
+    height:auto;
+    margin-top: 1rem;
 }
 
-.rsvp h2 {
-    font-size: 1.5rem;
-    color: #ffffff;
-}
-
-.rsvp input, .rsvp button {
-    margin: 10px 0;
-    padding: 10px;
-    width: 80%;
-    border-radius: 10px;
-    border: 2px solid #DAA520;
-    font-size: 1rem;
-}
-
-.error-message {
-    color: red;
-    font-size: 1.1rem;
-    margin-top: 15px;
-}
-
-/* Countdown Section */
 .countdown {
+    font-family: "Parisienne", serif;
     background-image: url('aset/ornamentother2.png');
     background-position: center;
     background-size: 50%;
     background-repeat: no-repeat;
-    padding: 100px;
+    padding: 40px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 15px;
     justify-content: center;
     align-items: center;
     margin-top: 40px;
-    padding: 40px;
     border-radius: 15px;
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
     flex-wrap: wrap;
+}
+
+.countdown h3 {
+    grid-column: span 4; /* Make the h3 take up the entire width */
+    text-align: center; /* Center the title */
+    font-size: 2rem; /* Adjust size for prominence */
+    font-family: "Playfair Display", serif; /* Styling the font */
+    color: #DAA520; /* White text */
+    margin-bottom: 30px; /* Add space below the title */
+    letter-spacing: 0.1rem; /* Add letter spacing for style */
 }
 
 .countdown .time-box {
@@ -303,7 +436,7 @@ h1 {
     align-items: center;
     margin: 10px;
     padding: 20px;
-    background-color: #DAA520;
+    background-color: #221419;
     border-radius: 10px;
     width: 80px;
     height: 120px;
@@ -316,76 +449,28 @@ h1 {
 }
 
 .countdown .time {
-    font-family: 'Playfair Display', serif;
+    font-family: "Parisienne", serif;
     font-size: 3rem;
     color: white;
     margin-bottom: 10px;
 }
 
 .countdown .label {
-    font-family: 'Open Sans', sans-serif;
+    font-family: "Parisienne", serif;
     font-size: 1rem;
     color: #666666;
 }
 
-/* Responsif banget tcyuy */
-@media only screen and (max-width: 768px) {
-    .countdown {
-        grid-template-columns: repeat(2, 1fr); /* 2 kolom */
-    }
-
-    .countdown .time-box {
-        width: 70px;
-        height: 100px;
-    }
-
-    .countdown .time {
-        font-size: 2.5rem;
-    }
-
-    .rsvp button {
-        font-size: 1.1rem;
-        padding: 12px 25px;
-    }
-
-    .rsvp input {
-        font-size: 1rem;
-    }
-
-    .lokasimap {
-        width: 100%;
-        max-width: 600px;
-        height: auto;
-        display: block;
-        margin: 20px 0;
-        border-radius: 10px;
-        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-    }
-
-    .lokasimap {
-        max-width: 100%;
-    }
+.closing p {
+    font-size: 1.2rem;
+    margin-bottom: 20px; /* Add a gap below the text */
 }
 
-/* Footer */
-.footer {
-    background-color: rgba(0, 0, 0, 0.6);
-    color: #fff;
-    padding: 30px 20px;
-    text-align: center;
-    font-size: 1.1rem;
-    position: relative;
-    margin-top: 40px;
-    border-radius: 15px;
-}
-
-.footer a {
-    color: #DAA520;
-    text-decoration: none;
-}
-
-@media (max-width: 768px) {
-    body {
-        display: block;
-    }
+.image-container2 {
+    width: 50%; /* Adjust the image size */
+    margin-top: 20px; /* Add a gap above the image */
+    max-width: 300px; /* Optional: limit max size */
+    display: block; /* Ensure image is displayed as a block */
+    margin-left: auto;
+    margin-right: auto; /* Center the image horizontally */
 }
