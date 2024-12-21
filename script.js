@@ -50,4 +50,28 @@ setTimeout(function() {
     document.getElementById('loading-screen').style.display = 'none';
     
     document.getElementById('main-content').style.display = 'block';
-}, 1000); 
+}, 3000); 
+
+document.addEventListener("DOMContentLoaded", function () {
+    const images = document.querySelectorAll(".image-formal img");
+    const modal = document.getElementById("imageModal");
+    const modalImage = document.getElementById("modalImage");
+    const closeButton = document.querySelector(".modal .close");
+
+    images.forEach((img) => {
+        img.addEventListener("click", () => {
+            modal.style.display = "block";
+            modalImage.src = img.src; 
+        });
+    });
+
+    closeButton.addEventListener("click", () => {
+        modal.style.display = "none";
+    });
+
+    window.addEventListener("click", (event) => {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    });
+});
