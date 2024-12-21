@@ -324,7 +324,43 @@ button:hover {
     max-width: 300px;
     height: auto;
     margin-top: 20px;
+    padding: 15px;
+    background: linear-gradient(
+        135deg, 
+        #ff9a9e, 
+        #fad0c4, 
+        #fbc2eb, 
+        #a18cd1, 
+        #fad0c4
+    );
+    border: 10px solid transparent; 
+    border-radius: 20px;
+    clip-path: polygon(10% 0%, 90% 0%, 100% 90%, 70% 100%, 30% 100%, 0% 90%);
+    box-shadow: 
+        -8px -8px 15px rgba(255, 255, 255, 0.4), 
+        8px 8px 15px rgba(0, 0, 0, 0.3),
+        inset 0 3px 10px rgba(0, 0, 0, 0.2);
+    transform: rotate(-3deg); 
+    transition: all 0.5s ease;
 }
+
+.image-formal img:hover {
+    transform: rotate(0deg) scale(1.1);
+    box-shadow: 
+        -12px -12px 25px rgba(255, 255, 255, 0.6),
+        12px 12px 25px rgba(0, 0, 0, 0.5), 
+        inset 0 5px 15px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(
+        135deg, 
+        #a18cd1, 
+        #fbc2eb, 
+        #fad0c4, 
+        #ff9a9e, 
+        #fbc2eb
+    ); 
+}
+
+
 
 .details {
     border-radius: 15px;
@@ -519,4 +555,47 @@ button:hover {
 #main-content {
     padding: 20px;
     font-family: Arial, sans-serif;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8); 
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 80%;
+    max-height: 80%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: zoomIn 0.3s;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: black; 
+    border-radius: 50%; 
+    padding: 5px 15px; 
+    text-align: center;
+    line-height: 35px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes zoomIn {
+    from {transform: scale(0.5);}
+    to {transform: scale(1);}
 }
