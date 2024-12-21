@@ -234,6 +234,7 @@ body, html {
     width: 50%; 
     max-width: 400px; 
     text-align: center; 
+    
 }
 
 .gallery img {
@@ -247,6 +248,7 @@ body, html {
 .gallerytext{
     color:#DAA520
 }
+
 
 button {
     padding: 15px 30px;
@@ -320,28 +322,28 @@ button:hover {
 }
 
 .image-formal img {
-    width: 35%;
+    width: 75%;
     max-width: 300px;
     height: auto;
-    margin-top: 20px;
+    margin-top: 2rem;
     padding: 15px;
     background: linear-gradient(
         135deg, 
-        #ff9a9e, 
-        #fad0c4, 
-        #fbc2eb, 
-        #a18cd1, 
-        #fad0c4
+        #744c4d, 
+        #85635a, 
+        #6b4b62, 
+        #4c4461, 
+        #69514a
     );
     border: 10px solid transparent; 
     border-radius: 20px;
-    clip-path: polygon(10% 0%, 90% 0%, 100% 90%, 70% 100%, 30% 100%, 0% 90%);
     box-shadow: 
         -8px -8px 15px rgba(255, 255, 255, 0.4), 
         8px 8px 15px rgba(0, 0, 0, 0.3),
         inset 0 3px 10px rgba(0, 0, 0, 0.2);
     transform: rotate(-3deg); 
     transition: all 0.5s ease;
+    margin-bottom:2rem;
 }
 
 .image-formal img:hover {
@@ -352,11 +354,11 @@ button:hover {
         inset 0 5px 15px rgba(0, 0, 0, 0.3);
     background: linear-gradient(
         135deg, 
-        #a18cd1, 
-        #fbc2eb, 
-        #fad0c4, 
-        #ff9a9e, 
-        #fbc2eb
+        #4e2837, 
+        #664250, 
+        #633f4d, 
+        #6e4555, 
+        #775864
     ); 
 }
 
